@@ -48,7 +48,3 @@ def analyze_patient_record(record_text: str, model_name: str = "llama3.1:8b") ->
         return "Ollama Response Error"
     except Exception as e:
         return "An Unknown Exception Has Occurred"
-
-print(analyze_patient_record(
-    "45-year-old male presents with sharp right lower quadrant abdominal pain for 12 hours. Reports nausea and low-grade fever (38.1 C). Negative for diarrhea. Normal bowel sounds."
-))

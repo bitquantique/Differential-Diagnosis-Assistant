@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 def load_patient_records()-> str:
-    if len(sys.argv[1] > 1):
+    if len(sys.argv[1])>1:
         file_path = Path(sys.argv[1])
 
         if not file_path.is_file():
