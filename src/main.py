@@ -21,6 +21,8 @@ def print_report(report: DifferentialReport):
     print("======================================================================\nDIFFERENTIAL DIAGNOSIS REPORT\n======================================================================")
     print(f"\nClinical Summary:\n{report.summary}\n")
     print("----------------------------------------------------------------------\nDIFFERENTIAL DIAGNOSES (Sorted by Confidence):\n----------------------------------------------------------------------")
+    priority = {"High": 0, "Medium": 1, "Low": 2}
+    report.diag.sort(key=lambda d: priority[d.confidence])
     count = 1
     for diag in report.diag:
         print(f"\n[{count}] {diag.diag_name} | Confidence: {diag.confidence}")
