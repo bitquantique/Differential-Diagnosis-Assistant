@@ -25,7 +25,7 @@ Guidelines:
 - If a patient is male, do not suggest female gynecological conditions (and vice-versa). An impossible diagnosis should never be suggested.
 """
 
-def analyze_patient_record(record_text: str, model_name: str = "llama3.1:8b") -> DifferentialReport:
+def analyze_patient_record(record_text: str, model_name: str = "deepseek-r1-dev") -> DifferentialReport:
     try:
         response = ollama.chat(
             model = model_name,
