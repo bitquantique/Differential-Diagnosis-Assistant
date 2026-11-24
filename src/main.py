@@ -1,4 +1,4 @@
-from schemas import DifferentialReport
+from src.schemas import DifferentialReport
 from analyzer import analyze_patient_record
 from load_records import load_patient_records
 

@@ -1,6 +1,6 @@
 import json
 import ollama
-from schemas import DifferentialReport
+from src.schemas import DifferentialReport
 
 SYSTEM_PROMPT = """
 You are a Clinical Decision Support Assistant designed to assist physicians by generating differential diagnoses from patient records.
@@ -25,7 +25,7 @@ Guidelines:
 - If a patient is male, do not suggest female gynecological conditions (and vice-versa). An impossible diagnosis should never be suggested.
 """
 
-def analyze_patient_record(record_text: str, model_name: str = "deepseek-r1-dev") -> DifferentialReport:
+def analyze_patient_record(record_text: str, model_name: str = "GPT:latest") -> DifferentialReport:
     try:
         response = ollama.chat(
             model = model_name,
